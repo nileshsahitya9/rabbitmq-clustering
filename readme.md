@@ -1,20 +1,20 @@
 
 ## Setup
 
-# First we'll create our own network
+#### First we'll create our own network
 1. docker network create rabbits
 
-# We need Erlang cookie for communication between the nodes.
+#### We need Erlang cookie for communication between the nodes.
 2. steps to get a cookie 
 
-# will run a standalone instance  
+###### will run a standalone instance  
 docker run -d --rm --net rabbits --hostname rabbit-1 --name rabbit-1 rabbitmq:3.8
-# how to grab existing erlang cookie
+###### how to grab existing erlang cookie
 docker exec -it rabbit-1 cat /var/lib/rabbitmq/.erlang.cookie
-# clean up
+###### clean up
 docker rm -f rabbit-1
 
-# make sure to give a proper path of your config file.
+#### make sure to give a proper path of your config file.
 3. Starting rabbit-1
 
     ```
@@ -54,7 +54,7 @@ docker rm -f rabbit-1
     rabbitmq:3.8-management
     
     ```
-# Now go to this URL http://localhost:8081 make sure it's working
+#### Now go to this URL http://localhost:8081 make sure it's working
 
 6. Creating Publisher Image
 
