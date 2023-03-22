@@ -6,15 +6,14 @@
 
 #### We need Erlang cookie for communication between the nodes.
 2. steps to get a cookie 
+   ###### will run a standalone instance  
+   ``` docker run -d --rm --net rabbits --hostname rabbit-1 --name rabbit-1 rabbitmq:3.8 ```
+   ###### how to grab existing erlang cookie
+   ``` docker exec -it rabbit-1 cat /var/lib/rabbitmq/.erlang.cookie ```
+   ###### clean up
+   ``` docker rm -f rabbit-1 ```
 
-###### will run a standalone instance  
-docker run -d --rm --net rabbits --hostname rabbit-1 --name rabbit-1 rabbitmq:3.8
-###### how to grab existing erlang cookie
-docker exec -it rabbit-1 cat /var/lib/rabbitmq/.erlang.cookie
-###### clean up
-docker rm -f rabbit-1
-
-#### make sure to give a proper path of your config file.
+#### Note: Make sure to give a proper path of your config file.
 3. Starting rabbit-1
 
     ```
